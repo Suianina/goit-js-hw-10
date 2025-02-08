@@ -47,6 +47,7 @@ startBtn.addEventListener('click', () => {
 
     if (remainingTime <= 0) {
       clearInterval(intervalId);
+      updateTimerDisplay(0, 0, 0, 0);
       iziToast.success({
         message: 'Countdown finished!',
         position: 'topRight',
@@ -56,8 +57,8 @@ startBtn.addEventListener('click', () => {
       return;
     }
 
-    const time = convertMs(remainingTime);
-    updateTimerDisplay(time);
+    const { days, hours, minutes, seconds } = convertMs(remainingTime);
+    updateTimerDisplay(days, hours, minutes, seconds);
   }, 1000);
 });
 
@@ -75,13 +76,13 @@ function convertMs(ms) {
   return { days, hours, minutes, seconds };
 }
 
-function updateTimerDisplay({ days, hours, minutes, seconds }) {
-  daysElement.textContent = formatTimeComponent(days);
-  hoursElements.textContent = formatTimeComponent(hours);
-  minutesElement.textContent = formatTimeComponent(minutes);
-  secondsElements.textContent = formatTimeComponent(seconds);
+function updateTimerDisplay(days, hours, minutes, seconds) {
+  daysElement.textContent = addLeadingZero(days);
+  hoursElements.textContent = addLeadingZero(hours);
+  minutesElement.textContent = addLeadingZero(minutes);
+  secondsElements.textContent = addLeadingZero(seconds);
 }
 
-function formatTimeComponent(value) {
-  return value.toString().padStart(2, '0');
+function addLeadingZero(value) {
+  return String(value).padStart(2, '0');
 }
