@@ -47,17 +47,17 @@ startBtn.addEventListener('click', () => {
 
     if (remainingTime <= 0) {
       clearInterval(intervalId);
-        startBtn.disable = false;
-      dayInput.disable = false;
+      startBtn.disabled = false;
+      dayInput.disabled = false;
       return;
     }
-    
+
     const time = convertMs(remainingTime);
-    updateTimerDisplay(time);  }, 1000);
+    updateTimerDisplay(time.days, time.hours, time.minutes, time.seconds);
+  }, 1000);
 });
 
 function convertMs(ms) {
- 
   const second = 1000;
   const minute = second * 60;
   const hour = minute * 60;
@@ -72,10 +72,10 @@ function convertMs(ms) {
 }
 
 function updateTimerDisplay(days, hours, minutes, seconds) {
-  daysElement.textContent = addLeadingZero(days);
-  hoursElements.textContent = addLeadingZero(hours);
-  minutesElement.textContent = addLeadingZero(minutes);
-  secondsElements.textContent = addLeadingZero(seconds);
+  daysElement.textContent = formatTimeComponent(days);
+  hoursElements.textContent = formatTimeComponent(hours);
+  minutesElement.textContent = formatTimeComponent(minutes);
+  secondsElements.textContent = formatTimeComponent(seconds);
 }
 
 function formatTimeComponent(value) {
