@@ -47,22 +47,17 @@ startBtn.addEventListener('click', () => {
 
     if (remainingTime <= 0) {
       clearInterval(intervalId);
-      updateTimerDisplay(0, 0, 0, 0);
-      iziToast.success({
-        message: 'Countdown finished!',
-        position: 'topRight',
-      });
-      startBtn.disabled = true;
-      dayInput.disabled = false;
+        startBtn.disable = false;
+      dayInput.disable = false;
       return;
     }
-
-    const { days, hours, minutes, seconds } = convertMs(remainingTime);
-    updateTimerDisplay(days, hours, minutes, seconds);
-  }, 1000);
+    
+    const time = convertMs(remainingTime);
+    updateTimerDisplay(time);  }, 1000);
 });
 
 function convertMs(ms) {
+ 
   const second = 1000;
   const minute = second * 60;
   const hour = minute * 60;
@@ -83,6 +78,6 @@ function updateTimerDisplay(days, hours, minutes, seconds) {
   secondsElements.textContent = addLeadingZero(seconds);
 }
 
-function addLeadingZero(value) {
-  return String(value).padStart(2, '0');
+function formatTimeComponent(value) {
+  return value.toString().padStart(2, '0');
 }
