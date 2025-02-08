@@ -3,7 +3,7 @@ import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-const startBtn = document.querySelector('.btn-start');
+const startBtn = document.querySelector('[data-start]');
 const dayInput = document.querySelector('#datetime-picker');
 const daysElement = document.querySelector('[data-days]');
 const hoursElements = document.querySelector('[data-hours]');
@@ -47,6 +47,7 @@ startBtn.addEventListener('click', () => {
 
     if (remainingTime <= 0) {
       clearInterval(intervalId);
+      updateTimerDisplay(0, 0, 0, 0);
       startBtn.disabled = false;
       dayInput.disabled = false;
       return;
