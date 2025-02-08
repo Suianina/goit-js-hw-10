@@ -14,25 +14,26 @@ startBtn.disabled = true;
 let userSelectedDate;
 let intervalId;
 
-flatpickr('#datetime-picker', {
+flatpickr("#datetime-picker", {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
+    console.log("Выбрана дата:", selectedDates[0]);
     const now = new Date();
     userSelectedDate = selectedDates[0];
 
-    if (userSelectedDate <= now) {
+    if (!userSelectedDate || userSelectedDate <= now) {
       iziToast.error({
-        message: 'Please choose a date in the future',
-        position: 'topRight',
+        message: "Please choose a date in the future",
+        position: "topRight",
       });
       startBtn.disabled = true;
     } else {
       startBtn.disabled = false;
     }
-  },
+  }
 });
 
 startBtn.addEventListener('click', () => {
