@@ -24,8 +24,26 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.delay-label {
+  margin-bottom: 20px;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  font-weight: var(--font-weight);
+
+  color: var(--color-text);
+  background-color: var(--color-background);
+
+  margin: 0;
+  padding: 0;
 }

@@ -20,7 +20,6 @@ flatpickr("#datetime-picker", {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    console.log("Выбрана дата:", selectedDates[0]);
     const now = new Date();
     userSelectedDate = selectedDates[0];
 

@@ -7,7 +7,7 @@ const stateInputs = document.querySelectorAll('input[name="state"]');
 
 
 function createPromise(value, delay, status){
-    const promise = new Promise((resolve, reject)=>{
+    return new Promise((resolve, reject)=>{
         setTimeout(() =>{
             if(status) resolve(value);
             else reject(value);
