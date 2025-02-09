@@ -3,68 +3,69 @@ body {
     background-color: #f5f5f5;
     margin: 0;
     padding: 20px;
-  }
-  
-  .snackbar-container {
-    max-width: 400px;
+}
+
+.snackbar-container {
+    max-width: 300px;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
+}
+
+h1 {
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
-  }
+}
 
-  .form {
+.form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-  }
-  
-  .delay-label {
+}
+
+.delay-label {
     display: flex;
     flex-direction: column;
     gap: 5px;
     font-weight: bold;
-  }
-  
-  .delay-input {
+}
+
+.delay-input {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
-  }
-  
+}
 
-  .state-fieldset {
+.state-fieldset {
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 10px;
     margin: 0;
-  }
-  
-  .state-legend {
+    width: 100%;
+}
+
+.state-legend {
     font-weight: bold;
     padding: 0 5px;
-  }
-  
-  .input-label {
+    font-size: 14px;
+}
+
+.input-label {
     display: flex;
     align-items: center;
     gap: 8px;
     font-size: 14px;
-  }
-  
-  .input {
-    margin: 0;
-  }
+}
 
-  .submit-btn {
+.input {
+    margin: 0;
+}
+
+.submit-btn {
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -72,8 +73,8 @@ body {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-  }
-  
-  .submit-btn:hover {
+}
+
+.submit-btn:hover {
     background-color: #45a049;
-  }
+}
