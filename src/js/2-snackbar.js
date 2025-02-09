@@ -32,13 +32,13 @@ form.addEventListener("submit", (event) => {
 });
 
 function createPromise(delay, state) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (state === "fulfilled") {
-                resolve();
-            } else {
-                reject();
-            }
-        }, delay);
-    });
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (state === "fulfilled") {
+        resolve();
+      } else {
+        reject();
+      }
+    }, delay);
+  });
 }
